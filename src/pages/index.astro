@@ -1,11 +1,14 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import main from "../markup/main-home.html?raw";
+import jsonLd from "../markup/home-jsonld.html?raw";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const title = "Vancouver Cycling Directories | Routes, Clubs, retails, events and more";
+const description =
+	"The complete cycling directory for Vancouver. Discover curated routes, local clubs, events, retailers, and communities. Everything cyclists need in one place.";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout title={title} description={description} pageId="69c21645af4328ddcab6d53a">
+	<script slot="head" is:inline type="application/ld+json" set:html={jsonLd} />
+	<Fragment set:html={main} />
+</BaseLayout>

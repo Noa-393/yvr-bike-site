@@ -1,0 +1,11 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import main from "../markup/main-about.html?raw";
+
+const title = "About";
+const description = "About";
+---
+
+<BaseLayout title={title} description={description} pageId="69c21b2ccfe8cb8611130e49">
+	<Fragment set:html={main} />
+</BaseLayout>

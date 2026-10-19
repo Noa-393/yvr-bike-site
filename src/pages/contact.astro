@@ -1,0 +1,12 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import main from "../markup/main-contact.html?raw";
+
+const title = "Contact";
+const description = "Contact";
+---
+
+<BaseLayout title={title} description={description} pageId="69c21b36618e1fd058d87bf6">
+	<Fragment set:html={main} />
+	<script is:inline src="/js/contact-form.js"></script>
+</BaseLayout>
